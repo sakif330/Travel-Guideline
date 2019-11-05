@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Travel Assistant</title>
+	<link rel="icon" type= "image/png" href="head.png"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<style type="text/css">
+		s10{
+		    font-size:100px;
+			
+		}
+		s20{
+		    font-size:70px;
+			
+		}
+		.welcome{margin-top:40px;text-align:right;margin-right:30px;}
+		.pad{padding-top:40px;text-align:right;margin-right:90px;}
+		.padleft1{margin-right:100px;}
+		.padleft2{margin-right:75px;}
+		.padleft3{margin-right:107px;}
+		.padleft4{margin-right:48px;}
+		.padleft5{margin-right:113px;}
+		
+	</style>
+</head>
+
+<body style="background:url(signup.jpg) no-repeat; background-size:100%">
+	<div class="welcome">
+		<s20 style= "color:#FFFFFF"> Sign Up </s20>
+	</div>
+
+	<div class="pad">
+		<form action="login.html" method="POST">
+			<div class="padleft1">
+				<h4 style= "color:#FFFFFF"> Full Name </h4>
+			</div>
+			
+			<input type="text" name="uid" value="">
+		
+		
+			<div class="padleft1">
+				<h4 style= "color:#FFFFFF"> User Name </h4>
+			</div>
+			<input type="text" name="pwd" value="">   
+			<div class="padleft2">
+				<h4 style= "color:#FFFFFF"> Email Address</h4>
+			</div>
+			<input type="text" name="pwd" value="">   
+			<div class="padleft3">
+				<h4 style= "color:#FFFFFF"> Password</h4>
+			</div>
+			<input type="password" name="pwd" value="">   
+			<div class="padleft4">
+				<h4 style= "color:#FFFFFF"> Confirm Password </h4>
+			</div>
+			<input type="password" name="pwd" value="">   
+			<br><br><br>
+			<div class="padleft5">
+				<button type="submit">Confirm</button>
+			</div>
+			
+		
+		</form>
+   
+	</div>
+	<?php
+     if(isset($_SESSION['id'])){
+     	echo $_SESSION['id'];
+     }
+     else{
+     	echo" you are not logged in!";
+     }
+
+	?>
+
+
+</body>
+	
+
+</html>

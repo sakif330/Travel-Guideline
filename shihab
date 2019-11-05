@@ -1,0 +1,55 @@
+ <%@page import="allclasses.DBConnect"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>|| Retrive From Database || </title>
+    </head>
+    <body>
+     
+    </body>
+    <form method="get">
+     
+    <table border="2">
+    <tr>
+    <td>name</td>
+    <td>password</td>
+     
+    </tr>
+    <%
+    try
+    {
+    Class.forName("com.mysql.jdbc.Driver");
+   DBConnect db = new DBConnect();
+     Connection con = db.getConnection();
+    Statement stmt=con.createStatement();
+    ResultSet rs=stmt.executeQuery("select * from registration");
+    while(rs.next())
+    {
+     
+    %>
+       <tr>
+        <td><%=rs.getString("username") %></td>
+        <td><%=rs.getString("password") %></td>
+        
+    </tr>
+            <%
+     
+    }
+    %>
+        </table>
+        <%
+        
+        con.close();
+        }
+    catch(Exception e)
+    {
+        e.printStackTrace();
+        }
+    %>
+     
+    </form>
+    </html> 

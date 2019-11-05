@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Travel Assistant</title>
+	<link rel="icon" type= "image/png" href="head.png"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<style type="text/css">
+		s10{
+		    font-size:100px;
+			
+		}
+		.welcome{text-align:left}
+		.pad{padding-top:50px;}
+		.padleft{padding-left:10px;}
+		
+	</style>
+</head>
+
+<body style="background:url(travel-021.jpg) no-repeat; background-size:130%">
+<div class="welcome">
+<s10 style= "color:#FFFFFF"> Welcome </s10>
+</div>
+
+<div class="pad">
+  <form action="home.html" method="POST">
+
+    <input type="text" name="uid" placeholder="username">
+	<br><br>
+    <input type="password" name="pwd" placeholder="password">   
+	<br><br>
+	 
+    <button type="submit">login</button>
+	<br><br><br>
+	
+	
+	
+	  
+   </form>
+   <form action="signup.html" method="POST">
+		<p>Don't have an account ?  <button type="submit">Sign Up</button> </p>
+	</form>
+   
+</div>
+   <?php
+     if(isset($_SESSION['id'])){
+     	echo $_SESSION['id'];
+     }
+     else{
+     	echo" you are not logged in!";
+     }
+
+   ?>
+
+
+</body>
+	
+
+</html>
+
+
